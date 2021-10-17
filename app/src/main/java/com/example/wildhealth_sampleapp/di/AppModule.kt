@@ -26,6 +26,6 @@ class AppModule {
     fun providesWorkoutRepository(
         @ApplicationContext context: Context,
         workoutService: WorkoutService,
-        dispatcher: CoroutineDispatcher
+        @IoDispatcher dispatcher: CoroutineDispatcher
     ): WorkoutRepository = WorkoutRepositoryImpl(context, workoutService, dispatcher)
 }

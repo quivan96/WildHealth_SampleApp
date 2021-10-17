@@ -11,7 +11,9 @@ import com.example.wildhealth_sampleapp.databinding.FragmentExerciseDetailsBindi
 import com.example.wildhealth_sampleapp.utils.loadImage
 import com.example.wildhealth_sampleapp.utils.showToast
 import com.example.wildhealth_sampleapp.viewmodel.WorkoutViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ExerciseDetailsFragment: Fragment() {
 
     private var _binding: FragmentExerciseDetailsBinding? = null

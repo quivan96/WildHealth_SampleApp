@@ -18,7 +18,7 @@ class WorkoutAdapter(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
-            )
+            ), listener
         )
     }
 
@@ -35,10 +35,12 @@ class WorkoutAdapter(
     }
 
     class WorkoutViewHolder(
-        private val binding: ListItemWorkoutBinding
+        private val binding: ListItemWorkoutBinding,
+        private val listener: (workout: Workout) -> Unit
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(workout: Workout) {
             with(binding) {
+                root.setOnClickListener { listener.invoke(workout) }
                 nameTv.text = workout.name
                 bodyPartTv.text = workout.bodyPart
             }
