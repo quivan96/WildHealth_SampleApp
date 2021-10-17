@@ -6,8 +6,8 @@ import kotlinx.coroutines.flow.Flow
 
 interface WorkoutRepository {
 
-    suspend fun getAllExercises(): Flow<Resource<List<Workout>>>
+    fun getAllExercises(): Flow<Resource<List<Workout>>>
 
-    suspend fun getExerciseByName(name: String): Flow<Resource<List<Workout>>>
+    fun getExerciseByName(name: String): Flow<Resource<List<Workout>>>
 
 }

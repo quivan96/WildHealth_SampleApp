@@ -7,9 +7,9 @@ import com.example.wildhealth_sampleapp.model.repository.WorkoutRepositoryImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.qualifiers.ActivityContext
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import kotlinx.coroutines.CoroutineDispatcher
 import retrofit2.Retrofit
 import javax.inject.Singleton
 
@@ -25,6 +25,7 @@ class AppModule {
     @Provides
     fun providesWorkoutRepository(
         @ApplicationContext context: Context,
-        workoutService: WorkoutService
-    ): WorkoutRepository = WorkoutRepositoryImpl(context, workoutService)
+        workoutService: WorkoutService,
+        dispatcher: CoroutineDispatcher
+    ): WorkoutRepository = WorkoutRepositoryImpl(context, workoutService, dispatcher)
 }

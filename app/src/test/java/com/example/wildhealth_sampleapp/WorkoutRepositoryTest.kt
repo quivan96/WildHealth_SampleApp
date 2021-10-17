@@ -11,6 +11,7 @@ import io.mockk.coEvery
 import io.mockk.impl.annotations.MockK
 import junit.framework.Assert.assertEquals
 import junit.framework.Assert.assertTrue
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.last
 import kotlinx.coroutines.runBlocking
 import org.junit.Before
@@ -32,7 +33,7 @@ class WorkoutRepositoryTest {
         MockKAnnotations.init(this)
 
         workoutRepository =
-            WorkoutRepositoryImpl(ApplicationProvider.getApplicationContext(), workoutService)
+            WorkoutRepositoryImpl(ApplicationProvider.getApplicationContext(), workoutService, Dispatchers.IO)
     }
 
     @Test
