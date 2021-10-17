@@ -17,7 +17,7 @@ class WorkoutViewModel @Inject constructor(
     private var _workouts = MutableLiveData<Resource<List<Workout>>>()
     val workouts: LiveData<Resource<List<Workout>>> = _workouts
 
-    private var selectedWorkout : Workout? = null
+    var selectedWorkout : Workout? = null
     private var userQuery = ""
 
     init {
