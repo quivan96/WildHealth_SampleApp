@@ -10,7 +10,7 @@ interface WorkoutService {
     @GET("exercises")
     suspend fun getAllExercises(): Response<List<Workout>>
 
-    @GET("exercise/{name}")
+    @GET("exercises/name/{name}")
     suspend fun getExerciseByName(
         @Path("name") name: String
     ): Response<List<Workout>>

@@ -2,4 +2,9 @@
     <string name="app_name">WildHealth_SampleApp</string>
     <string name="no_exercise_found_message">Failed to find any exercises</string>
     <string name="details_fragment_error_message">Failed to load details.</string>
+    <string name="body_part">Body Part</string>
+    <string name="name">Name</string>
+    <string name="equipment">Equipment</string>
+    <string name="target">Target</string>
+    <string name="search">Search</string>
 </resources>

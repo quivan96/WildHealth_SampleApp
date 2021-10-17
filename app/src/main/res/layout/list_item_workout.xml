@@ -11,25 +11,56 @@
         android:layout_height="match_parent"
         android:minHeight="?actionBarSize">
 
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glv_1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".3" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/name_lbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/name"
+            app:layout_constraintBottom_toTopOf="@id/body_part_lbl"
+            app:layout_constraintEnd_toStartOf="@id/glv_1"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="@id/body_part_lbl"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/body_part_lbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/body_part"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/glv_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/name_lbl" />
+
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/name_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?textAppearanceHeadline5"
+            app:layout_constraintBaseline_toBaselineOf="@id/name_lbl"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/body_part_tv"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@id/glv_1"
             app:layout_constraintTop_toTopOf="parent"
+            android:maxLines="1"
             tools:text="Curl" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/body_part_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?textAppearanceHeadline5"
+            app:layout_constraintBaseline_toBaselineOf="@id/body_part_lbl"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/name_tv"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@id/glv_1"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Bicep" />
 

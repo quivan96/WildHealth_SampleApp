@@ -44,7 +44,16 @@ class ExerciseListFragment : Fragment() {
 
         with(binding) {
             exerciseSearchEt.editText?.addTextChangedListener {
-                viewModel.onUserInput(it.toString())
+                if (it.toString().isBlank()) {
+                    viewModel.searchExercise("")
+                }
+            }
+
+            searchBtn.setOnClickListener {
+                val input = exerciseSearchEt.editText?.text.toString()
+                if (input.isNotBlank()) {
+                    viewModel.searchExercise(input)
+                }
             }
 
             exerciseRv.apply {

@@ -13,17 +13,72 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent=".8"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_launcher_background" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glv_1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".45" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/body_part_lbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:text="@string/body_part"
+        app:layout_constraintBottom_toTopOf="@id/equipment_lbl"
+        app:layout_constraintEnd_toStartOf="@id/glv_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/exercise_iv" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/equipment_lbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:text="@string/equipment"
+        app:layout_constraintBottom_toTopOf="@id/name_lbl"
+        app:layout_constraintEnd_toStartOf="@id/glv_1"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="@id/body_part_lbl"
+        app:layout_constraintTop_toBottomOf="@id/body_part_lbl" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/name_lbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:text="@string/name"
+        app:layout_constraintBottom_toTopOf="@id/target_lbl"
+        app:layout_constraintEnd_toStartOf="@id/glv_1"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="@id/body_part_lbl"
+        app:layout_constraintTop_toBottomOf="@id/equipment_lbl" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/target_lbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:text="@string/target"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/glv_1"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="@id/body_part_lbl"
+        app:layout_constraintTop_toBottomOf="@id/name_lbl" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/body_part_tv"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:gravity="center"
+        android:gravity="center_vertical"
         android:text="?textAppearanceBody1"
         app:layout_constraintBottom_toTopOf="@id/equipment_tv"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/glv_1"
         app:layout_constraintTop_toBottomOf="@id/exercise_iv"
         tools:text="body part" />
 
@@ -31,21 +86,21 @@
         android:id="@+id/equipment_tv"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:gravity="center"
+        android:gravity="center_vertical"
         app:layout_constraintBottom_toTopOf="@id/name_tv"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/glv_1"
         app:layout_constraintTop_toBottomOf="@id/body_part_tv"
         tools:text="body part" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/name_tv"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
         app:layout_constraintBottom_toTopOf="@id/target_tv"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/glv_1"
         app:layout_constraintTop_toBottomOf="@id/equipment_tv"
         tools:text="body part" />
 
@@ -54,10 +109,10 @@
         android:id="@+id/target_tv"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:gravity="center"
+        android:gravity="center_vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/glv_1"
         app:layout_constraintTop_toBottomOf="@id/name_tv"
         tools:text="body part" />
 
