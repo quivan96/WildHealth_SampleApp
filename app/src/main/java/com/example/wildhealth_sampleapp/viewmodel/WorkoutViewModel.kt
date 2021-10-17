@@ -17,7 +17,14 @@ class WorkoutViewModel @Inject constructor(
     private var _workouts = MutableLiveData<Resource<List<Workout>>>()
     val workouts: LiveData<Resource<List<Workout>>> = _workouts
 
-    fun getAllExercise() {
+    private var selectedWorkout : Workout? = null
+    private var userQuery = ""
+
+    init {
+        getAllExercise()
+    }
+
+    private fun getAllExercise() {
         viewModelScope.launch {
             workoutRepository.getAllExercises().collect {
                 _workouts.postValue(it)
@@ -25,11 +32,25 @@ class WorkoutViewModel @Inject constructor(
         }
     }
 
-    fun getWorkoutByName(name: String) {
+    private fun getWorkoutByName() {
         viewModelScope.launch {
-            workoutRepository.getExerciseByName(name).collect {
+            workoutRepository.getExerciseByName(userQuery).collect {
                 _workouts.postValue(it)
             }
+        }
+    }
+
+    fun onUserSelection(workout: Workout) {
+        selectedWorkout = workout
+    }
+
+    fun onUserInput(input: String) {
+        if (input == userQuery) return
+        userQuery = input
+        if (input.length > 2) {
+            getWorkoutByName()
+        } else {
+            getAllExercise()
         }
     }
 }
