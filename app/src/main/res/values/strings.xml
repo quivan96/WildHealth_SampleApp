@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">WildHealth_SampleApp</string>
+    <string name="no_exercise_found_message">Failed to find any exercises</string>
 </resources>
